@@ -76,6 +76,13 @@
   background-size: 100%;
 }
 
+.bground{
+    background-image: url("bground3.gif");
+    z-index: -1;
+    background-repeat: repeat-x repeat-y;
+
+}
+
 .item.portrait{height: 55em; width: 40em;}
 
 .item.pfac1{height: 25em; width: 40em;}
@@ -161,11 +168,32 @@ ul {
 
 	}
 
+.bground{
+    background-image: url("bground5.gif");
+    z-index: -1;
+    background-repeat: repeat-x repeat-y;
+
+}
+
+.writing{
+	font-size: 1em;
+	color: black;
+	font-weight: bold;
+	font-family: arial;
+	left: 20em;
+	width: 70%;
+	margin: 10%;
+	padding: 2%;
+	background-color: #ffffff;
+	font-size: 0.75em;
+	box-shadow:5px 5px 5px rgba(0,0,0,0.3);
+
+}
 
 /*d094ff*/
 
 
-#bbg1{display: inline-block;
+/*#bbg1{display: inline-block;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -174,14 +202,14 @@ ul {
     width: 96%;
     height: 94%;
     margin: auto;
-    background-color: #d094ff;">Full Center ON Page}
+    background-color: #d094ff;">Full Center ON Page}*/
 
 /*#bbg2{width: 1.5%; 
 	height: 200%;
 	position: fixed;
 	margin: 0 auto;
 	top: -1px;
-	background-color: #ffffff;
+	background-color: #ffffff;#d094ff;
 	left:0px;
 	}*/
 
@@ -316,6 +344,8 @@ a:active  {color:#000000; background-color:transparent; text-decoration:none;}
 <h1 id="alexa"> <a href='index.html'>alexa<br>terfloth </a></h1>
 
 
+<div class='bground'>
+
 <a id="info" href="mailto:aterflot@risd.edu">aterflot@risd.edu</a>
 
 <ul class="info2">
@@ -338,7 +368,7 @@ a:active  {color:#000000; background-color:transparent; text-decoration:none;}
 
 <div class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 1 }'>
 
-
+		<div> <p class="writing"> we are a oihjhgjhgj e are a oihjhgjhgj e are a oihjhgjhgj e are a oihjhgjhgj e are a oihjhgjhgj e are a oihjhgjhgj e are a oihjhgjhgj e are a oihjhgjhgj e are a oihjhgjhgj e are a oihjhgjhgj</p></div>
 				
 			  	<div class="item bigsquare" id="seasons"> 
 			  		<p class="text"><u>Posters.</u> This is a poster that is an informal infographic for the temperature in New England throughout the seasons. Bright yellow represents the warmest days and light blue represent the coldest. The rest of the colors are gradations between the two. The circle is divided up into 365 pieces, with each "slice" representing the average temperature for that day.</p></div>
@@ -375,6 +405,7 @@ a:active  {color:#000000; background-color:transparent; text-decoration:none;}
 
 	</div>
 
+</div>
 
 	<script src="masonry.pkgd.min.js">
 
