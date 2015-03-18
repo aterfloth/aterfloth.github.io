@@ -1,0 +1,421 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>alexa terfloth</title>
+	<style type="text/css">
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+
+.masonry {
+  
+  max-width: 80%;
+  left: 20%;
+}
+
+/*.masonry .item {
+  width:  200px;
+  height: 270px;
+  margin: 20px;
+  float: left;
+  background-size: 100%;
+}
+
+.item.portrait{height: 400px; width: 270px;}
+
+.item.smallsquare{
+		height: 200px;
+}
+
+.item.landscape { width: 400px;}
+
+.item.bigsquare {width: 400px; height: 400px;}
+
+*/
+/*.masonry .item {
+  width:  134px;
+  height: 180.9px;
+  margin: 13.4px;
+  float: left;
+  background-size: 100%;
+}
+
+.item.portrait{height: 268px; width: 180.9px;}
+
+.item.smallsquare{
+		height: 134px;
+}
+
+.item.landscape { width: 268px;}
+
+.item.bigsquare {width: 268px; height: 268px;}
+
+*/
+.masonry .item {
+  width:  40em;	
+  height: 12.1203em;	
+  margin: 8.978px;
+  float: left;
+  background-size: 100%;
+}
+
+.bground{
+    background-image: url("bground3.gif");
+    z-index: -1;
+    background-repeat: repeat-x repeat-y;
+
+}
+
+.item.portrait{height: 55em; width: 40em;}
+
+.item.pfac1{height: 25em; width: 40em;}
+
+.item.legs1{height: 60em; width: 40em;}
+
+.item.wild1{height: 30.5em; width: 40em;}
+
+.item.smallsquare{
+		height: 8.978em;
+}
+
+.item.landscape { width: 40em; height: 30em;}
+
+.item.bigsquare {width: 40em; height: 40em;}
+
+.item.hehe{height: 12em; width: 80%; z-index: 100}
+
+
+#alexa{
+		font-family: arial;
+		color: black;
+		font-size: 3em;
+		color: black;
+		position: fixed;
+		top: -0.5em;
+		z-index: 20;
+		background-color: #00cc99;
+		padding-left: 1em;
+		left: -0.5em;
+		padding-right: 0.25em;
+
+
+
+}
+
+#info{
+	position: fixed;
+	top: 9em;
+	font-size: 1em;
+	z-index: 20;
+	color: black;
+	font-weight: bold;
+	font-family: arial;
+	background-color: #00cc99;
+	padding-left: 2.1em;
+	left: -0.5em;
+	padding-right: 0.25em;
+}
+
+.info2{position: fixed;
+	top: 12em;
+	font-size: 1em;
+	z-index: 20;
+	color: black;
+	font-weight: bold;
+	font-family: arial;
+	background-color: #00cc99;
+	padding-left: 2.1em;
+	left: -0.5em;
+	padding-right: 0.25em;
+
+}
+
+ul {
+   list-style: none;
+   margin: 0;
+   padding: 0px;
+   line-height: 120%;
+}
+
+/*#menu{width: 200px; 
+	height: 100%;
+	background-color: #ffffff;
+	position: fixed;
+	z-index: 15;
+	margin: 0px;
+	left: 0px;
+	top: 0px;}*/
+
+#topn{width: 100%; 
+	height: 1em;
+	opacity: 0.4;
+
+	}
+
+.bground{
+    background-image: url("bground5.gif");
+    z-index: -1;
+    background-repeat: repeat-x repeat-y;
+
+}
+
+.writing{
+	font-size: 1em;
+	color: black;
+	font-weight: bold;
+	font-family: arial;
+	left: 20em;
+	width: 70%;
+	margin: 10%;
+	padding: 2%;
+	background-color: #ffffff;
+	font-size: 0.75em;
+	box-shadow:5px 5px 5px rgba(0,0,0,0.3);
+
+}
+
+/*d094ff*/
+
+
+/*#bbg1{display: inline-block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 96%;
+    height: 94%;
+    margin: auto;
+    background-color: #d094ff;">Full Center ON Page}*/
+
+/*#bbg2{width: 1.5%; 
+	height: 200%;
+	position: fixed;
+	margin: 0 auto;
+	top: -1px;
+	background-color: #ffffff;#d094ff;
+	left:0px;
+	}*/
+
+.text {
+	position:absolute;
+	visibility:hidden;
+	font-family: arial;
+	font-weight: bold;
+	width: 70%;
+	margin: 10%;
+	padding: 2%;
+	background-color: #ffffff;
+	font-size: 0.75em;
+	box-shadow:5px 5px 5px rgba(0,0,0,0.3);
+	z-index: 30;
+	}
+
+
+	.hidden {
+			display: none;
+		}
+
+
+	#greengirl{
+			
+			background-image: url('greengirlsmall.png');
+		}
+
+		#greengirl:hover .text {
+			visibility:visible;
+			top:30px;
+			left:20px;
+			}
+
+	#vogue{	
+		background-image: url('jlaw.jpg');
+	}
+
+		#vogue:hover .text {
+			visibility:visible;
+			top:30px;
+			left:20px;
+			}
+
+
+
+	#seasons{
+	background-image: url('circlepost.png');}
+
+		#seasons:hover .text {
+			visibility:visible;
+			top:30px;
+			left:20px;
+			}
+
+
+
+	#pfac{
+		background-image: url('pfac.png');
+	}
+
+		#pfac:hover .text {
+			visibility:visible;
+			top:30px;
+			left:20px;
+			}
+
+
+
+	#hiding{
+		background-image: url('hiding.jpg');
+	}
+
+		#hiding:hover .text {
+			visibility:visible;
+			top:30px;
+			left:20px;
+			}
+
+
+
+
+
+	#square{
+		background-image: url('square.png');
+	}
+
+		#square:hover .text {
+			visibility:visible;
+			top:30px;
+			left:20px;
+			}
+
+	#wild{
+		background-image: url('wild.jpg');
+	}
+
+		#wild:hover .text {
+			visibility:visible;
+			top:30px;
+			left:20px;
+			}
+
+	#legs{
+		background-image: url('legs.jpg');
+	}
+
+		#legs:hover .text {
+			visibility:visible;
+			top:30px;
+			left:20px;
+			}
+
+	
+
+		
+
+a:link    {color:#000000; background-color:transparent; text-decoration:none;}
+
+a:visited {color:#000000; background-color:transparent; text-decoration:none;}
+
+a:hover   {color:#000000; background-color:transparent; text-decoration:underline;}
+
+a:active  {color:#000000; background-color:transparent; text-decoration:none;}
+
+
+
+	</style>
+
+</head>
+<body bgcolor="#ffffff">
+<h1 id="alexa"> <a href='index.html'>alexa<br>terfloth </a></h1>
+
+
+<div class='bground'>
+
+<a id="info" href="mailto:aterflot@risd.edu">aterflot@risd.edu</a>
+
+<ul class="info2">
+  <li>
+  		<u>Posters</u></li>
+  <li><a href='weare.html'>
+  		We Are</a></li>
+  <li><a href='tinaroom.html'>
+  		Tinas Room</a></li>
+  <li><a href='messy.html'>
+  		Messy</a></li>
+   <li><a href='animations.html'>
+  		Animations</a></li>
+</ul>
+
+
+	<div id="topn"></div>
+
+	<div id="bbg1"></div><div id="bbg2"></div>
+
+<div class="masonry js-masonry"  data-masonry-options='{ "columnWidth": 1 }'>
+
+		<div class="item hehe"> <p class="writing"> <u>Posters.</u> This is a selection of "posters". Not all are technically posters, but they are forms of digital art that I felt appropriate to call posters.</p></div>
+				
+		<div class="item bigsquare" id="seasons"> 
+			  		<p class="text"> This is a poster that is an informal infographic for the temperature in New England throughout the seasons. Bright yellow represents the warmest days and light blue represent the coldest. The rest of the colors are gradations between the two. The circle is divided up into 365 pieces, with each "slice" representing the average temperature for that day. The actual temperature is no longer important, because here you can speak of the temperature in colors as they are all relative to each other.</p></div>
+			    
+
+		<div class="item portrait"id="vogue">
+			  		<p class="text"> This is a magazine cover that I created with the intention of showing the over-the-top <i> everything </i> about the rich and famous and the importance that is put on material goods in that world.</p></div>
+			  	
+			  	<div id="menu2"></div>
+
+			  	<div class="item bigsquare" id="greengirl" >
+			    	<p class="text"> This is a quick sketch of a fictional girl created in photoshop, part of a series of girls who are not real. I am interested in the idea of people being stereotyped as "fake".</p></div>
+
+
+				  <div class="item legs1" id="legs">
+			    	<p class="text"> Models wearing socks that are out of character.</p></div>
+
+				<div class="item bigsquare" id="hiding" >
+			    	<p class="text"> Fictional girl created in photoshop, part of a series of girls who are not real. I am interested in the idea of people being stereotyped as "fake".</p></div>
+
+
+				 <div class="item wild1" id="wild">
+			  		<p class="text"><u>Posters.</u> Sock advertisement.</p></div>
+
+				
+			  	 <div class="item pfac1" id="pfac">
+			    	<p class="text"> Identity for the Brown University Crew Team Pull For a Cure initiative.</p></div>
+
+			 	
+			  	<div class="item bigsquare" id="square">
+			  		<p class="text"> I like these colors, this is an experiment in gradation done in a set number of steps.</p></div>
+			  
+	
+
+	</div>
+
+</div>
+
+	<script src="masonry.pkgd.min.js">
+
+$("#seasons").click(function(){
+    	$("#seasons").addClass("hidden");
+    	$("#bigseasons").removeClass("hidden");
+    });
+
+	</script>
+</body>
+
+</html>
