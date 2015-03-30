@@ -1,0 +1,107 @@
+
+<!DOCTYPE html><html><head><title>Pattern</title>
+
+
+
+
+<style>
+
+.oa{	font-family:serif; 
+		font-size:3em; 
+		color:white; 
+		font-weight: bold;
+		font-style: italic;
+		background-color: black;
+		position: fixed;
+		left: 5%;
+	
+}
+
+body{
+	position:fixed;
+}
+
+#inf{font-family:serif; 
+		font-size:1em; 
+		color:white; 
+		font-weight: bold;
+		font-style: italic;
+		position: fixed;
+		top: 10%;
+		left: 5%;
+		background: black;
+	}
+
+#t { font-family:serif; 
+		font-size:7em; 
+		color:black; 
+		font-weight: bold;
+		
+		position:fixed;
+		top:5%;
+		bottom:0;
+		right:0;
+		left:10%;
+		z-index: 10;
+	}
+
+#how2{font-family:serif; 
+		font-size:7em; 
+		color:#00cc99; 
+		font-weight: bold;
+		
+		position:fixed;
+		top:5%;
+		bottom:0;
+		right:0;
+		left:10%;}
+
+</style>
+
+</head>
+
+<body onLoad="dotime()">
+
+
+<a class="oa" id="back" href="index.html">back</a>
+
+<p class="oa"id="inf"> View them all <a href="all.html">here</a></p>
+
+<p id="t"></p>
+<!-- 
+<p id="how2">ab : cd : ef : ghi</p> -->
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+function dotime(){
+	
+	$("body").css({"transition": "all 0.8s", "-webkit-transition": "all 0.8s"});
+	
+	var d = new Date();
+	var hours = d.getHours();
+	var mins = d.getMinutes();
+	var secs = d.getSeconds();
+	var milli = d.getMilliseconds();
+	
+	
+	if (hours < 10){hours = "0" + hours};
+	if (mins < 10){mins = "0" + mins};
+	if (secs < 10){secs = "0" + secs};
+	if (milli < 10){milli = "0" + milli};
+	
+	hours.toString();
+	mins.toString();
+	secs.toString();
+	milli.toString();
+	
+	
+	$("#t").html(hours +" : "+ mins +" : "+ secs +" : "+ milli);
+	
+}
+
+</script>
+
+</html>
