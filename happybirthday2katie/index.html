@@ -2,6 +2,7 @@
 <html>
 
 <head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Pacifico">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=droid+serif">
 
@@ -33,6 +34,13 @@ box-shadow: 0px 0px 58px 4px rgba(0,0,0,0.75);
 */
 	body{
 	background-image: url('14.png');
+}
+
+.main{width: 100%;
+	color: blue;}
+.loading{
+	width: 200px;
+	color:red;
 }
 
 	.text{font-family: Pacifico;
@@ -233,9 +241,22 @@ box-shadow: 0px 0px 58px 4px rgba(0,0,0,0.75);
 
 	
 
-	<script>
- 
-	</script>
+	
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    // to fade in on page load
+    $("body").css("display", "none");
+    $("body").fadeIn(1000); 
+    // to fade out before redirect
+    $('a').click(function(e){
+        redirect = $(this).attr('href');
+        e.preventDefault();
+        $('body').fadeOut(400, function(){
+            document.location.href = redirect
+        });
+    });
+})</script>
 
 </body>
 
