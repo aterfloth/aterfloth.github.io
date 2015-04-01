@@ -247,12 +247,12 @@ box-shadow: 0px 0px 58px 4px rgba(0,0,0,0.75);
 $(document).ready(function(){
     // to fade in on page load
     $("body").css("display", "none");
-    $("body").fadeIn(1000); 
+    $("body").fadeIn(2500); 
     // to fade out before redirect
     $('a').click(function(e){
         redirect = $(this).attr('href');
         e.preventDefault();
-        $('body').fadeOut(400, function(){
+        $('body').fadeOut(1000, function(){
             document.location.href = redirect
         });
     });
