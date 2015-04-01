@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <meta name="keywords" content="alexa, terfloth">
 	<title>alexa terfloth</title>
 	<style type="text/css">
@@ -534,6 +535,22 @@ a:active  {color:#000000; background-color:transparent; text-decoration:none;}
 
 
 	<script src="masonry.pkgd.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    // to fade in on page load
+    $("body").css("display", "none");
+    $("body").fadeIn(1000); 
+    // to fade out before redirect
+    $('a').click(function(e){
+        redirect = $(this).attr('href');
+        e.preventDefault();
+        $('body').fadeOut(1000, function(){
+            document.location.href = redirect
+        });
+    });
+
+})</script>
 
 </div>
 </body>
