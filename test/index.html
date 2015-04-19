@@ -16,28 +16,76 @@
   }
 
  #x{
-    height: 10%;
-    width: 10%;
-    background-color: orange;
+    
     left: 5%;
-    top:31%;
+    bottom:7%;
+    position: fixed;
+    font-family: Open Sans, sans-serif;
+  font-weight: 700;
+  font-size: 2.7em;
+  z-index: 20;
+  color: black;
+  background-color: orange;
+  padding-left: 1em;
+  left: -0.5em;
+  padding-right: 0.25em;
+
+  }
+
+
+#x:hover{
+  cursor:pointer;
+  text-decoration: underline;
+}
+  #WR{
+    height: 100%;
+    width: 100%;
+    background-color: purple;
+    left:0px;
+    top:0px;
     position: fixed;
 
   }
 
-#x:hover{
-  cursor:pointer;
-}
-  #WR{
+  #seasonsappear{
+    height: 100%;
+    width: 100%;
+    background-color: green;
+    left:0px;
+    top:0px;
+    position: fixed;
+
+  }
+
+  #tinaroomappear{
     height: 100%;
     width: 90%;
-    background-color: purple;
+    background-color: yellow;
     margin-left:10%;
     top:0px;
     position: fixed;
 
   }
 
+  #pfacappear{
+    height: 100%;
+    width: 90%;
+    background-color: green;
+    margin-left:10%;
+    top:0px;
+    position: fixed;
+
+  }
+
+   #messyappear{
+    height: 100%;
+    width: 90%;
+    background-color: red;
+    margin-left:10%;
+    top:0px;
+    position: fixed;
+
+  }
 
 .csor{
 }
@@ -80,6 +128,10 @@
 	
   	<a><div class="item bigsquare" id="seasons">
   		<p class="text"><u>Posters.</u> This is a poster that is an informal infographic for the temperature in New England throughout the seasons. Bright yellow represents the warmest days and light blue represent the coldest. The rest of the colors are gradations between the two. The circle is divided up into 365 pieces, with each "slice" representing the average temperature for that day. The actual temperature is no longer important, because here you can speak of the temperature in colors as they are all relative to each other.</p></div></a>
+
+    <a><div class="item landscape" id="girl"> </div></a>
+    
+
     
     <a><div class="item portrait" id="greengirl" >
     	<p class="text"><u>Posters.</u> This is a quick sketch of a fictional girl created in photoshop, part of a series of girls who are not real. I am interested in the idea of people being stereotyped as "fake".</p></div></a>
@@ -157,30 +209,33 @@
 
 	</div></div>
 
-  <div id="x" class="hidden"></div>
+  <div id="x" class="hidden">back</div>
 
   <div id="WR" class="hidden"></div>
 
+  <div id="seasonsappear" class="hidden"></div>
+
+  <div id="tinaroomappear" class="hidden"></div>
+
+  <div id="pfacappear" class="hidden"></div>
+
+  <div id="messyappear" class="hidden"></div>
 
 <script src="masonry.pkgd.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript">
 
+// WEAREMAGAZINE
+
 $(document).ready(function() {
-  $("#madewell").click(function(){
+  $("#madewell, #thisistheplan, #meanwhile, #weare").click(function(){
       $("#WR").toggleClass("hidden");
     });
 
-    $("#madewell").click(function(){
+    $("#madewell, #thisistheplan, #meanwhile, #weare").click(function(){
       $("#x").removeClass("hidden");
     });
-  $("#thisistheplan").click(function(){
-      $("#WR").toggleClass("hidden");
-    });
-
-    $("#thisistheplan").click(function(){
-      $("#x").removeClass("hidden");
-    });
+ 
   $("#x").click(function(){
       $("#WR").addClass("hidden");
     });
@@ -189,6 +244,79 @@ $(document).ready(function() {
       $("#x").addClass("hidden");
     });
 
+
+
+// SEASONS
+
+  $("#seasons").click(function(){
+      $("#seasonsappear").toggleClass("hidden");
+    });
+
+    $("#seasons").click(function(){
+      $("#x").removeClass("hidden");
+    });
+ 
+  $("#x").click(function(){
+      $("#seasonsappear").addClass("hidden");
+    });
+
+  $("#x").click(function(){
+      $("#x").addClass("hidden");
+    });
+
+  // TINASROOM
+
+  $("#tina4").click(function(){
+      $("#tinaroomappear").toggleClass("hidden");
+    });
+
+    $("#tina4").click(function(){
+      $("#x").removeClass("hidden");
+    });
+ 
+  $("#x").click(function(){
+      $("#tinaroomappear").addClass("hidden");
+    });
+
+  $("#x").click(function(){
+      $("#x").addClass("hidden");
+    });
+
+    // PFAC
+
+  $("#pfac").click(function(){
+      $("#pfacappear").toggleClass("hidden");
+    });
+
+    $("#pfac").click(function(){
+      $("#x").removeClass("hidden");
+    });
+ 
+  $("#x").click(function(){
+      $("#pfacappear").addClass("hidden");
+    });
+
+  $("#x").click(function(){
+      $("#x").addClass("hidden");
+    });
+
+      // MESSY
+
+  $("#messyphoto, #messy").click(function(){
+      $("#messyappear").toggleClass("hidden");
+    });
+
+    $("#messyphoto, #messy").click(function(){
+      $("#x").removeClass("hidden");
+    });
+ 
+  $("#x").click(function(){
+      $("#messyappear").addClass("hidden");
+    });
+
+  $("#x").click(function(){
+      $("#x").addClass("hidden");
+    });
 
 });
 

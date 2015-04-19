@@ -95,9 +95,9 @@
 	font-family: Open Sans, sans-serif;
 	font-weight: 700;
 	position:absolute;
+	margin-left: 5%;
 	visibility:hidden;
 	width: 70%;
-	margin: 10%;
 	padding: 2%;
 	background-color: #ffffff;
 	font-size: 0.65em;
@@ -213,15 +213,6 @@
 			left:20px;
 			}
 
-/*	#roomdraw{
-		background-image: url('roomdrawsmall.png');
-	}
-
-		#roomdraw:hover .text {
-			visibility:visible;
-			top:30px;
-			left:20px;
-			}*/
 
 	#hiding{
 		background-image: url('hidingsmall.png');
@@ -319,6 +310,10 @@
 		background-image: url('bground9.gif');
 	}
 
+	#girl{
+		background-image: url('girl.gif');
+		background-repeat: no-repeat;	
+	}
 	
 
 a:link    {color:#000000; background-color:transparent; text-decoration:none;}
