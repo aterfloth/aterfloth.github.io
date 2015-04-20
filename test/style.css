@@ -89,13 +89,8 @@
 
 	}
 
-if(window.TouchEvent) {
-   .text{
-   	display:none;
-   }
-}
 
-.text {
+.no-touch .text {
 	font-family: Open Sans, sans-serif;
 	font-weight: 700;
 	position:absolute;
