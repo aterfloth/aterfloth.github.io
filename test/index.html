@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="modernizr.custom.67112.js"></script>
+
 
 <head>
   <style>
@@ -319,12 +319,17 @@ $(document).ready(function() {
       $("#x").addClass("hidden");
     });
 
+
+
 });
 
 
 </script>
 
-
+<script>
+    document.documentElement.className += 
+    (("ontouchstart" in document.documentElement) ? ' touch' : ' no-touch');
+</script>
 
 </body>
 
