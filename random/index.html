@@ -10,7 +10,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=droid+serif">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 
 <meta name="keywords" content="alexa, terfloth">
@@ -23,6 +23,10 @@
 }
 
 
+
+body{
+	background-position: 100% 100%;
+}
 
 .masonry {
   
@@ -332,6 +336,9 @@ ul {
 		background-image: url('bground9.gif');
 	}
 
+	.project{}
+
+	.viewer{}
 	
 
 a:link    {color:#000000; background-color:transparent; text-decoration:none;}
@@ -348,7 +355,7 @@ a:active  {color:#000000; background-color:transparent; text-decoration:none;}
 
 </head>
 <body>
-<div class='bground'>
+<div >
 
 <h1 id="alexa"> <a href='index.html'>alexa<br>terfloth </a></h1>
 
@@ -460,7 +467,7 @@ a:active  {color:#000000; background-color:transparent; text-decoration:none;}
 
 
 	<script src="masonry.pkgd.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	
 
 	<!-- 
 <script type="text/javascript">
@@ -480,7 +487,60 @@ $(document).ready(function(){
 })</script>
 
  -->
-</div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+
+var randomNum = Math.floor(Math.random() * 43 )
+
+
+
+$('body').css('background-image','url("' + randomNum + '.png")' );
+
+$("#dlz").attr("href", randomNum + ".png")
+
+$("#dlz").attr("href", randomNum + ".png")
+
+$("#prev").attr("src", randomNum + ".png")
+
+var colors = Array("#ffb400", "#7b0051", "#00d1c1", "#dd93ff", "#ff5a5f", "#007a87", "#ffaa91", "#8ce071", "#aa9200","#ff5300"), idx;
+$("a").hover(function(){
+  idx = Math.floor(Math.random() * colors.length); // Pick random index
+  $(this).css("color", colors[idx]);
+}, function() {
+  $(this).css("color","#ffffff");
+
+
+$("#qm").click(function(){
+    	$("#questionbox").removeClass("hidden");
+    });
+$("#x").click(function(){
+    	$("#questionbox").addClass("hidden");
+    });
+
+
+$("#qm").click(function(){
+    	$("#qm").addClass("hidden");
+    });
+$("#x").click(function(){
+    	$("#qm").removeClass("hidden");
+    });
+
+
+});
+
+console.log(randomNum);
+
+});
+
+
+</script>
 </body>
 
 </html>
