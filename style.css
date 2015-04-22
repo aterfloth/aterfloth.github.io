@@ -204,6 +204,12 @@ z-index: 300;
     display:none;
 }
 
+.touch .smallsquare {
+    display:none;
+}
+
+
+
 .text {
 	font-family: Open Sans, sans-serif;
 	font-weight: 700;
