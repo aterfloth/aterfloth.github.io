@@ -11,6 +11,15 @@ iframe{
 }
 
 
+#vid {position: fixed; 
+  top: 0; 
+  left: 0; 
+	
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;/*
+  -webkit-filter:blur(10px);*/
+}
 
 .masonry {
   
@@ -177,6 +186,20 @@ z-index: 300;
 	padding-right: 0.25em;
 }
 
+#school{
+	font-family: Open Sans, sans-serif;
+	font-weight: 700;
+	position: fixed;
+	top: 14em;
+	font-size: 1em;
+	z-index: 100;
+	color: black;
+	background-color: #00cc99;
+	padding-left: 2.1em;
+	left: -0.5em;
+	padding-right: 0.25em;
+}
+
 .info2{
 	font-family: Open Sans, sans-serif;
 	font-weight: 700;
@@ -305,7 +328,7 @@ z-index: 300;
 			}
 
 	#seasonsbig{
-	background-image: url('circlepost.png');}
+	background-image: url('circlepostsmall.png');}
 
 	#tina4{
 		background-image: url('tinasmall.png');
@@ -479,6 +502,17 @@ z-index: 300;
 			top:30px;
 			left:20px;
 			}	
+
+	#printcover{
+		background-image: url('PRINT7.jpg');
+		background-position: center;
+	}
+
+		#printcover:hover .text {
+			visibility:visible;
+			top:30px;
+			left:20px;
+			}	
 	#cca1{
 		background-image: url('Gehry.png');
 	}
@@ -501,6 +535,71 @@ z-index: 300;
 		
 	#pfaclogo{
 		background-image: url('pfaclogo.png');
+	}
+
+	#print1{
+		background-image: url('PRINT1.jpg');
+	}
+
+	#print2{
+		background-image: url('PRINT2.jpg');
+	}
+
+	#print3{
+		background-image: url('PRINT3.jpg');
+	}
+
+	#print4{
+		background-image: url('PRINT4.jpg');
+	}
+
+	#print5{
+		background-image: url('PRINT5.jpg');
+	}
+
+
+	#print6{
+		background-image: url('PRINT6.jpg');
+	}
+
+	#print7{
+		background-image: url('PRINT7.jpg');
+	}
+
+	#print8{
+		background-image: url('PRINT8.jpg');
+	}
+
+	#print9{
+		background-image: url('PRINT9.jpg');
+	}
+
+	#print10{
+		background-image: url('PRINT10.jpg');
+	}
+
+	#print11{
+		background-image: url('PRINT11.jpg');
+	}
+
+	#print12{
+		background-image: url('PRINT12.jpg');
+	}
+
+	#print13{
+		background-image: url('PRINT13.jpg');
+	}
+
+	#print14{
+		background-image: url('PRINT14.jpg');
+	}
+
+	#print15{
+		background-image: url('print1.png');
+	}
+
+	#printbookcover{
+		background-image: url('PRINT16.jpg');
 	}
 
 
