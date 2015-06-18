@@ -12,17 +12,34 @@
 
 <head>
 
-<link rel="alternate" media="only screen and (max-width: 640px)" href="http://m.alexaterfloth.com/mobile" />
-<link rel="alternate" media="handheld" href="http://m.alexaterfloth.com/mobile" />
 
 <style type="text/css">
 
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen
-and (min-device-width : 320px)
-and (max-device-width : 600px) {
-#blu{background:purple;}
-}
+@media only screen and (max-device-width: 480px) {
+    div#wrapper {
+      width: 400px;
+    }
+
+    div#blu {
+      background-color: green;
+      height: 93px;
+      position: relative;
+    }
+
+    div#email {
+      font-size: 5em;
+    }
+
+    #content {
+      float: none;
+      width: 100%;
+    }
+
+    #navigation {
+      float:none;
+      width: auto;
+    }
+  }
 
 #bg {
   position: fixed; 
