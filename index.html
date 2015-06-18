@@ -6,14 +6,13 @@
 
 <!DOCTYPE html>
 <html>
-
-</body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 
 
 <head>
 <style type="text/css">
+
 
 #bg {
   position: fixed; 
@@ -81,7 +80,16 @@ a:active {
 </head>
 <body style="background-color:#00cc99;');">
 
-
+<div id="removeFancy" style="position:absolute;top:0px;left:0px;width:100%;height:100%;background-color:white;z-index:1000;"></div>
+<script type="text/javascript">
+    $(function () {
+        var removal = document.getElementById("removeFancy");
+        $(removal).fadeTo("fast", 0.9);
+        $(removal).fadeOut("fast", function () {
+            this.parentNode.removeChild(this);
+        });
+    });
+</script>
 
 <video id="bg" src="water.m4v" autoplay loop/></video>
 
