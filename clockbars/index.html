@@ -1,0 +1,138 @@
+
+<!DOCTYPE html><html><head><title>.</title>
+
+
+
+
+<style>
+
+
+html,body {height: 100%;
+			width: 100%;}
+
+
+.bar{height: 19%; }
+
+#second { 
+		left: 1em;
+		z-index: 2;
+		
+	}
+
+
+#minute { 
+		left: 1em;
+		z-index: 2;
+		
+	}
+
+#hour { 
+		left: 1em;
+		z-index: 2;
+		
+	}
+
+#day { 
+		left: 1em;
+		z-index: 2;
+		
+	}
+
+#month { 
+		left: 1em;
+		z-index: 2;
+		
+	}
+
+#label{
+	font-size: 70%;
+	font-family: helvetica;
+	font-weight: bold;
+	position: absolute;
+	color: white;
+}
+
+</style>
+
+</head>
+
+<body onLoad="dotime()">
+
+<div class="bar"id="second"></div>
+<div class="bar"id="minute"></div>
+<div class="bar"id="hour"></div>
+<div class="bar"id="day"></div>
+<div class="bar"id="month"></div>
+
+<div id="label"></div>
+
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+function dotime(){
+	
+	$("body").css({"transition": "all 3s", "-webkit-transition": "all 0.8s"});
+	
+	
+	var d = new Date();
+	var month = d.getMonth()+1;
+	var day = d.getDate();
+	var hours = d.getHours();
+	var mins = d.getMinutes();
+	var sec = d.getSeconds();
+	var milli = d.getMilliseconds();
+	
+
+	var millicolor = "rgb(" + milli/2 + ",100," + milli+37 + ")"
+
+
+
+	var seccolor = "hsl(" + (((sec*187)/60)+68) + ",50%,60%)"
+
+	var mincolor = "hsl(" + (((mins*187)/60)+68) + ",50%,50%)"
+
+	var hourcolor = "hsl(" + (((hours*187)/24)+68) + ",50%,40%)"
+
+	var daycolor = "hsl(" + (((day*187)/30)+68) + ",50%,30%)"
+
+	var monthcolor = "hsl(" + (((month*187)/12)+68) + ",50%,20%)"
+	
+	$("body").css("background-color", millicolor);
+
+	$("#second").css("background-color", seccolor);
+	$("#minute").css("background-color", mincolor);
+	$("#hour").css("background-color", hourcolor);
+	$("#day").css("background-color", daycolor);
+	$("#month").css("background-color", monthcolor);
+
+	$("#second").css("width", (sec*100)/60 + "%");
+	$("#minute").css("width", (mins*100)/60 + "%");
+	$("#hour").css("width", (((hours*60)/24)*100)/60 + "%");
+	$("#day").css("width", (((day*60)/30)*100)/60 + "%");
+	$("#month").css("width", (((month*60)/12)*100)/60 + "%");
+
+	$(".bar").mouseenter( function() {
+		var hoverid = $(this).attr('id');
+		$("#label").html(hoverid);
+
+	});
+
+	$(".bar").mouseleave( function() {
+		$("#label").html("");
+
+	});
+
+	console.log(day);
+
+	
+	
+}
+
+	setInterval(dotime, 107);
+
+</script>
+
+</html>
