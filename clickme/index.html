@@ -1,0 +1,76 @@
+
+<!DOCTYPE html><html><head><title>clickme</title>
+
+
+
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<style>
+
+
+</style>
+
+</head>
+
+<body>
+
+<button type="button" class="blue" id="first">Click Me!</button>
+
+
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+
+
+var counter=0
+
+$(document).ready(function() {
+	var multiply = 1;
+  $(document).on('click', '.blue', function(e){
+
+  	$(this).hide();
+
+  	multiply = multiply * 1.3;
+
+  	
+
+  	for (var i = 1; i <= multiply ; i++) {
+  		
+
+	  	var pagewidth=$(window).width();
+	  	var pageheight=$(window).height();
+
+
+	  	var x=e.pageX
+	  	var y=e.pageY
+
+	  	// var random1=Math.random() *200 -150
+	  	// var random2=Math.random() *200 -150
+
+		var random1=Math.random() *pagewidth
+	  	var random2=Math.random() *pageheight
+
+	  	$("body").append('<button type="button" class="blue">Click Me!</button>'); 	
+
+	  	$(".blue").last().css({"top": random2 , "left": random1});
+
+	  	$("#first").css({"top": random2 , "left": random1});
+
+	};
+
+    console.log(counter);
+  });
+});
+
+	
+
+});
+</script>
+
+</html>

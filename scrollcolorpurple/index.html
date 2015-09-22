@@ -1,0 +1,168 @@
+
+<!DOCTYPE html><html><head><title>Clockbar</title>
+
+
+
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+
+<style>
+
+body {
+    background-color: rgb(231,88,62);
+    min-height: 20000px;
+    width:100%;
+    max-width:100%;
+    position: absolute;
+    margin:0;
+}
+
+
+
+.left{
+
+    min-height: 20000px;
+    width:50%;
+    max-width:50%;
+    position: absolute;
+}
+
+.right{
+/*
+    background-color: rgb(255,0,98);*/
+    min-height: 20000px;
+    width:50%;
+    max-width:50%;
+    position: absolute;
+    left:50%;
+}
+
+#centerblock{
+    width:70%;
+    height: 30%;
+    position: fixed;
+        left:0;
+        top:0;
+        bottom:0;
+        right:0;
+    background-color: rgb(168,117,207);
+    margin: auto;
+
+}
+
+
+#leftblock{
+    width:20%;
+    height: 100%;
+    position: fixed;
+        left:30%;
+        top:0;
+        bottom:0;
+        right:0;
+    background-color: rgb(229,70,46);
+
+}
+
+
+#rightblock{
+    width:20%;
+    height: 100%;
+    position: fixed;
+        left:50%;
+        top:0;
+        bottom:0;
+        right:0;
+    background-color: rgb(232,101,76);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="left"></div>
+<div class="right"></div>
+
+<div id="centerblock"></div>
+<div id="rightblock"></div>
+<div id="leftblock"></div>
+
+
+</body>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://code.jquery.com/color/jquery.color-2.1.0.js"></script>
+<script type="text/javascript">
+
+
+
+
+$(document).ready(function(){ 
+
+
+    
+    //** notice we are including jquery and the color plugin at 
+    //** http://code.jquery.com/color/jquery.color-2.1.0.js
+    
+    var scroll_pos = 0;
+    var animation_begin_pos = 0; //where you want the animation to begin
+    var animation_end_pos = 20000; //where you want the animation to stop
+    var beginning_color = new $.Color( 'rgb(194,156,220)' ); //we can set this here, but it'd probably be better to get it from the CSS; for the example we're setting it here.
+    var ending_color = new $.Color( 'rgb(131,60,179)' ); ;//what color we want to use in the end
+    $(document).scroll(function() {
+        scroll_pos = $(this).scrollTop(); 
+        
+        if(scroll_pos >= animation_begin_pos && scroll_pos <= animation_end_pos ) { 
+           console.log( 'scrolling and animating' );
+            //we want to calculate the relevant transitional rgb value
+            var percentScrolled = scroll_pos / ( animation_end_pos - animation_begin_pos );
+            var newRed = beginning_color.red() + ( ( ending_color.red() - beginning_color.red() ) * percentScrolled );
+            var newGreen = beginning_color.green() + ( ( ending_color.green() - beginning_color.green() ) * percentScrolled );
+            var newBlue = beginning_color.blue() + ( ( ending_color.blue() - beginning_color.blue() ) * percentScrolled );
+            var newColor = new $.Color( newRed, newGreen, newBlue );
+            //console.log( newColor.red(), newColor.green(), newColor.blue() );
+            $('.left').animate({ backgroundColor: newColor }, 0);
+        } else if ( scroll_pos > animation_end_pos ) {
+             $('.left').animate({ backgroundColor: ending_color }, 0);
+        } else if ( scroll_pos < animation_begin_pos ) {
+             $('.left').animate({ backgroundColor: beginning_color }, 0);
+        } else { }
+
+
+        if(scroll_pos >= animation_begin_pos && scroll_pos <= animation_end_pos ) { 
+           console.log( 'scrolling and animating' );
+            //we want to calculate the relevant transitional rgb value
+            var percentScrolled = scroll_pos / ( animation_end_pos - animation_begin_pos );
+            var newRed = ending_color.red() + ( ( beginning_color.red() - ending_color.red() ) * percentScrolled );
+            var newGreen = ending_color.green() + ( ( beginning_color.green() - ending_color.green() ) * percentScrolled );
+            var newBlue = ending_color.blue() + ( ( beginning_color.blue() - ending_color.blue() ) * percentScrolled );
+            var newColor = new $.Color( newRed, newGreen, newBlue );
+            //console.log( newColor.red(), newColor.green(), newColor.blue() );
+                  $('.right').animate({ backgroundColor: newColor }, 0);
+        } else if ( scroll_pos > animation_end_pos ) {
+             $('.right').animate({ backgroundColor: ending_color }, 0);
+        } else if ( scroll_pos < animation_begin_pos ) {
+             $('.right').animate({ backgroundColor: beginning_color }, 0);
+        } else { }
+
+      
+    
+    });
+
+
+    
+
+
+
+});
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,55 @@
+
+<!DOCTYPE html><html><head><title>emojikeys</title>
+
+
+
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+
+<style>
+
+
+html,body {height: 100px;
+			width: 100%;}
+
+body {
+    height: 100%;
+}
+
+
+.emoji{
+	width: 100px;
+	height: 100px;
+	float:left;
+	background-size: 100%;
+}
+
+</style>
+
+</head>
+
+
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+ $(document).keydown(function(){
+ 	var currentKey = event.keyCode
+	$('body').append('<div class="emoji" style="background-image:url(' + currentKey + '.png);"></div>');
+
+
+	// if (currentKey == 81) {
+
+	// }
+
+		console.log(currentKey);
+
+  });
+
+});
+</script>
+
+</html>
