@@ -1,0 +1,83 @@
+
+<!DOCTYPE html><html><head><title>.</title>
+
+
+
+
+<style>
+
+html, body {
+	width: 100%;
+	height: 130%;
+	margin: 0;
+}
+
+.myDiv {width: 100px;
+	height:100px;
+	background-image: url('2.gif');
+	background-position: center;
+	float: left;
+
+	}
+
+.contain{
+	width: 100%;
+	position: fixed;
+}
+
+</style>
+
+</head>
+
+<body>
+	<textarea rows="4" cols="50">
+TYPE
+</textarea>
+<div class="contain">
+<div class="myDiv"></div>
+
+
+
+
+</div>
+
+
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+   
+
+
+$(document).ready(function(){
+
+ $(window).scroll(function() {
+        var $myDiv = $('.myDiv');
+        var st = $(this).scrollTop();
+        if ( st <= 100 ){
+      		st=100;
+      	}
+        $myDiv.height( st );
+      	
+    }).scroll();
+
+ $(document).keydown(function(){
+ 	var currentKey = event.keyCode
+	$('body').append('<div class="myDiv" style="background-image:url(' + currentKey + '.gif);"></div>');
+
+
+	// if (currentKey == 81) {
+
+	// }
+
+		console.log(currentKey);
+
+  });
+
+});
+
+</script>
+
+</html>
