@@ -28,13 +28,15 @@ textarea{
 	position: fixed;
 	z-index:100;
 	width: 100%;
+	font-size: 1em;
+	text-transform: lowercase;
 }
 </style>
 
 </head>
 
 <body>
-	<textarea rows="1" cols="100%"></textarea>
+	<textarea autofocus cols="100%" placeholder="type something here! then scroll sideways to change its size."></textarea>
 <div class="contain">
 
 
@@ -81,7 +83,7 @@ $(document).ready(function(){
 			var charCount = textareatext.length;
 
 			$('.contain').html("");
-			for (var j = 0; j <= 20; j++) {
+			for (var j = 0; j <= 25; j++) {
 				
 				// if (charCount !== 0) {
 					for (var i = 0; i <= charCount -1; i++) {
