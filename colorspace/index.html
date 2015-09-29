@@ -1,5 +1,11 @@
+██╗  ██╗███████╗██╗  ██╗███████╗
+██║  ██║██╔════╝██║  ██║██╔════╝
+███████║█████╗  ███████║█████╗  
+██╔══██║██╔══╝  ██╔══██║██╔══╝  
+██║  ██║███████╗██║  ██║███████╗
+╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝
 
-<!DOCTYPE html><html><head><title>.</title>
+<!DOCTYPE html><html><head><title>color space</title>
 
 
 
@@ -7,6 +13,7 @@
 <style>
 
 html, body {
+	background-color: black;
 	width: 120%;
 	height: 100%;
 	margin: 0;
@@ -81,9 +88,13 @@ $(document).ready(function(){
 			//make a var that is the number of letters in textareatext
 
 			var charCount = textareatext.length;
+			var replace = 25;
+			if(charCount >= 40){
+				replace = 5;
+			}
 
 			$('.contain').html("");
-			for (var j = 0; j <= 25; j++) {
+			for (var j = 0; j <= replace; j++) {
 				
 				// if (charCount !== 0) {
 					for (var i = 0; i <= charCount -1; i++) {
