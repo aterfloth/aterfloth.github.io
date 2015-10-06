@@ -28,7 +28,7 @@ html, body {
 }
 .everything{
 		-webkit-filter: 
-			blur(12px) 
+			blur(20px) 
 			contrast(2000%) 
 			saturate(500%) 
 			hue-rotate(300deg);
@@ -158,8 +158,10 @@ button:hover{
 $(document).ready(function(){
 	var clipboard = new Clipboard('#btn');
 	$( 'body' ).click(function() {
+
 		  $( 'textarea' ).focus();
 		});
+	$('#btn').hide();
 
 	var updateGifs = function() {
 	//update variable textareatext to what is in the textarea after every keydown
@@ -174,7 +176,7 @@ $(document).ready(function(){
 
 		if (charCount==0){
 			$('#instruc').show();
-			$('#btn').hide();
+			
 		}else{
 			$('#instruc').hide();
 			$('#btn').show();
@@ -228,17 +230,9 @@ $(document).ready(function(){
  $("textarea").keydown(function(event){
  	updateGifs();
   });
-
-  $("body").mousemove( function( event ) {
- 	var x = event.pageX;
- 	var windowW = $(window).width();
- 	var rotateAmt = (x / windowW) * 200 + 100;
-
-
 	
  updateGifs();
 });
-  });
 
 </script>
 
