@@ -1,0 +1,132 @@
+<!-- 
+██╗  ██╗███████╗██╗  ██╗███████╗
+██║  ██║██╔════╝██║  ██║██╔════╝
+███████║█████╗  ███████║█████╗  
+██╔══██║██╔══╝  ██╔══██║██╔══╝  
+██║  ██║███████╗██║  ██║███████╗
+╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝ -->
+
+<!DOCTYPE html><html><head><title>color space</title>
+
+
+
+
+<style>
+
+html, body {
+	background-color: black;
+	width: 120%;
+	height: 100%;
+	margin: 0;
+}
+
+.myDiv {width: 100px;
+	height:50px;
+	max-height:100%;/*
+	background-image: url('2.gif');*/
+	background-position: center;
+	float: left;
+
+	}
+
+.contain{
+	width: 105%;
+}
+textarea{
+	position: fixed;
+	z-index:100;
+	width: 100%;
+	font-size: 1em;
+	text-transform: lowercase;
+}
+</style>
+
+</head>
+
+<body>
+	<textarea autofocus cols="100%" placeholder="type something here! then scroll sideways to change its size."></textarea>
+<div class="contain">
+
+
+
+
+</div>
+
+
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+   
+
+
+$(document).ready(function(){
+		var textareatext = 'type';
+
+
+ $(window).scroll(function() {
+        var $myDiv = $('.myDiv');
+        var st = $(this).scrollLeft();
+        if ( st <= 50 ){
+      		st=50;
+      	}
+        $myDiv.height( st );
+      	
+    }).scroll();
+
+
+ $("textarea").keydown(function(){
+ 	var currentKey = event.keyCode
+	
+	/*make a variable that is the text inside of the text area*/
+
+	textareatext = $('textarea').val();
+
+	/*then when that variable changes set the contents of .contain to a sequence of divs that match text*/
+		//loop through all letters in textareatext
+			//make a var that is the number of letters in textareatext
+
+			var charCount = textareatext.length;
+			var replace = 25;
+			// if(charCount >= 40){
+			// 	replace = 10;
+			// }
+
+			$('.contain').html("");
+			for (var j = 0; j <= replace; j++) {
+				
+				// if (charCount !== 0) {
+					for (var i = 0; i <= charCount -1; i++) {
+						//variable that is the current letter 
+						var currentChar = textareatext.charAt(i);
+
+						$('.contain').append('<div class="myDiv" id=' +currentChar + ' style="background-image:url(' + currentChar + '.gif);"></div>');
+					};
+					
+				// }
+
+				// $('.myDiv').first().hide();
+
+			};
+			console.log(charCount);
+		//make a new div with the id of the letter
+		//
+
+	// $('.contain').append('<div class="myDiv" style="background-image:url(' + currentKey + '.gif);"></div>');
+
+
+	// if (currentKey == 81) {
+
+	// }
+
+		// console.log(textareatext);
+
+  });
+
+});
+
+</script>
+
+</html>

@@ -9,15 +9,31 @@
 <!DOCTYPE html><html><head><title>color space</title>
 
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/zenorocha/clipboard.js/master/dist/clipboard.min.js"></script>
 
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Allan">
 
 <style>
 
+
 html, body {
-	background-color: black;
+	background-color: white;
 	width: 120%;
 	height: 100%;
 	margin: 0;
+
+
+	
+}
+.everything{
+		-webkit-filter: 
+			blur(12px) 
+			contrast(2000%) 
+			saturate(500%) 
+			hue-rotate(300deg);
+		mix-blend-mode: hard-light;
+		
 }
 
 .myDiv {width: 100px;
@@ -27,105 +43,202 @@ html, body {
 	background-position: center;
 	float: left;
 
+	
 	}
 
 .contain{
 	width: 105%;
+
 }
+
 textarea{
+
+
 	position: fixed;
 	z-index:100;
+	font-weight: bold;
 	width: 100%;
-	font-size: 1em;
+	font-size: 19em;
+	color: white;
 	text-transform: lowercase;
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	outline: none !important;
+	position: fixed;
+	margin: auto;
+	text-align: center;
+    font-family: Allan;
+    text-shadow: 0px 0px white;
+    letter-spacing: 0.2em;
+
+
 }
+
+/*#fullsize{
+	width:68%;
+	text-align: center;
+
+}*/
+
+#instruc{
+	background-image: url('cursor.gif');
+	height: 200px;
+	width: 100%;
+	background-repeat:no-repeat;
+    background-size:contain;
+    background-position: center; 
+	position: fixed;
+	top:70px;
+	/*line-height: 65%;
+	top:10%;
+	position: fixed;
+	z-index:1;
+	font-weight: bold;
+	width: 100%;
+	font-size: 1500%;
+	color: black;
+	text-transform: lowercase;
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	outline: none !important;
+	position: fixed;
+	margin: auto;
+	text-align: center;
+    font-family: Allan;
+    text-shadow: 0px 0px white;
+    letter-spacing: 0.1em;*/
+}
+
+button{
+	position: fixed;
+	width: 10em;
+	height:5em;
+	left: 0;
+	top: 0;
+	bottom:0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	z-index:10000;
+	background-color: Transparent;
+	margin-bottom: 10%;
+}
+
+button:hover{
+	cursor: pointer;
+}
+
 </style>
 
 </head>
 
 <body>
-	<textarea autofocus cols="100%" placeholder="type something here! then scroll sideways to change its size."></textarea>
-<div class="contain">
 
+<!-- Trigger -->
+<button id="btn" data-clipboard-text="Just because you can doesn't mean you should — clipboard.js">
+    Copy url and send to friend!
+</button>
 
-
-
-</div>
-
+	
+	<div id="fullsize">
+		<div id="instruc"></div></div>
+	<div class="everything">
+		<textarea autofocus ></textarea>
+		<div class="contain"></div>
+		
+	</div>
 
 </body>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
 <script type="text/javascript">
 
-
-   
-
-
+//variable for text in the textarea
 $(document).ready(function(){
-		var textareatext = 'type';
+	var clipboard = new Clipboard('#btn');
+	$( 'body' ).click(function() {
+		  $( 'textarea' ).focus();
+		});
 
+	var updateGifs = function() {
+	//update variable textareatext to what is in the textarea after every keydown
+		textareatext = $('textarea').val();
+		// $('textarea').val(textareatext);
 
- $(window).scroll(function() {
+	//then when that variable changes set the contents of .contain to a sequence of divs that match text
+			//loop through all letters in textareatext
+				//make a var that is the number of letters in textareatext
+		var charCount = textareatext.length;
+		var repetitions = 700;
+
+		if (charCount==0){
+			$('#instruc').show();
+			$('#btn').hide();
+		}else{
+			$('#instruc').hide();
+			$('#btn').show();
+		}
+
+		$('.contain').html("");
+
+		var totalDivs = $('.myDiv').size();
+
+		for (var j = 0; j <= repetitions ; j++) { // repeats the sequence to fill page	
+			for (var i = 0; i < charCount; i++) { //makes initial sequence
+			//variable that is the current letter 
+			var currentChar = textareatext.charAt(i);
+			
+				if (currentChar == " "){
+					// do nothing
+				} else if (totalDivs >= 700) {
+					// do nothing
+				} else {
+					$('.contain').append('<div class="myDiv ' +currentChar + '" style="background-image:url(' + currentChar + '.gif);"></div>');}
+			};
+			totalDivs = $('.myDiv').size();
+		};
+
+		textareatext = $('textarea').val();
+
+		$("#btn").attr("data-clipboard-text", "alexaterfloth.com/colorspace/#" + textareatext);
+		// ;
+		// console.log("charCount: "+charCount);
+		// console.log("currentChar: "+currentChar);
+
+ 	}
+
+ 	//on pageload fill the text area with the hash from the url
+	var textareatext = location.hash;
+	console.log("textareatext: "+textareatext);
+	textareatext = textareatext.substring(1);
+	$('textarea').val(textareatext);  
+
+	//use horizontal scrolling to replace height of myDiv
+	$(window).scroll(function() {
         var $myDiv = $('.myDiv');
         var st = $(this).scrollLeft();
         if ( st <= 50 ){
       		st=50;
       	}
         $myDiv.height( st );
-      	
-    }).scroll();
+	}).scroll();
 
-
- $("textarea").keydown(function(){
- 	var currentKey = event.keyCode
-	
-	/*make a variable that is the text inside of the text area*/
-
-	textareatext = $('textarea').val();
-
-	/*then when that variable changes set the contents of .contain to a sequence of divs that match text*/
-		//loop through all letters in textareatext
-			//make a var that is the number of letters in textareatext
-
-			var charCount = textareatext.length;
-			var replace = 25;
-			// if(charCount >= 40){
-			// 	replace = 10;
-			// }
-
-			$('.contain').html("");
-			for (var j = 0; j <= replace; j++) {
-				
-				// if (charCount !== 0) {
-					for (var i = 0; i <= charCount -1; i++) {
-						//variable that is the current letter 
-						var currentChar = textareatext.charAt(i);
-
-						$('.contain').append('<div class="myDiv" id=' +currentChar + ' style="background-image:url(' + currentChar + '.gif);"></div>');
-					};
-					
-				// }
-
-				// $('.myDiv').first().hide();
-
-			};
-			console.log(charCount);
-		//make a new div with the id of the letter
-		//
-
-	// $('.contain').append('<div class="myDiv" style="background-image:url(' + currentKey + '.gif);"></div>');
-
-
-	// if (currentKey == 81) {
-
-	// }
-
-		// console.log(textareatext);
-
+		//when keydown happens in textarea, get current key
+ $("textarea").keydown(function(event){
+ 	updateGifs();
   });
 
+  $("body").mousemove( function( event ) {
+ 	var x = event.pageX;
+ 	var windowW = $(window).width();
+ 	var rotateAmt = (x / windowW) * 200 + 100;
+
+
+	
+ updateGifs();
 });
+  });
 
 </script>
 
