@@ -1,0 +1,205 @@
+<!-- 
+██╗  ██╗███████╗██╗  ██╗███████╗
+██║  ██║██╔════╝██║  ██║██╔════╝
+███████║█████╗  ███████║█████╗  
+██╔══██║██╔══╝  ██╔══██║██╔══╝  
+██║  ██║███████╗██║  ██║███████╗
+╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝ -->
+
+<!DOCTYPE html><html><head><title>color space</title>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="dist/clipboard.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Allan">
+
+<style>
+
+
+html, body {
+	background-color: white;
+	width: 120%;
+	height: 100%;
+	margin: 0;
+
+
+	
+}
+.everything{
+		-webkit-filter: 
+			blur(20px) 
+			contrast(2000%) 
+			saturate(500%) 
+			hue-rotate(300deg);
+		mix-blend-mode: hard-light;
+		
+}
+
+.myDiv {width: 100px;
+	height:50px;
+	max-height:100%;/*
+	background-image: url('2.gif');*/
+	background-position: center;
+	float: left;
+
+	
+	}
+
+.contain{
+	width: 105%;
+
+}
+
+textarea{
+
+
+	position: fixed;
+	z-index:100;
+	font-weight: bold;
+	width: 100%;
+	font-size: 19em;
+	color: white;
+	text-transform: lowercase;
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	outline: none !important;
+	position: fixed;
+	margin: auto;
+	text-align: center;
+    font-family: Allan;
+    text-shadow: 0px 0px white;
+    letter-spacing: 0.2em;
+
+
+}
+
+#fullsize{
+	width:68%;
+	text-align: center;
+
+}
+
+#instruc{
+	background-image: url('cursor.gif');
+	height: 200px;
+	width: 5px;
+	display: inline-block;
+	position: absolute;
+	top:70px;
+	/*line-height: 65%;
+	top:10%;
+	position: fixed;
+	z-index:1;
+	font-weight: bold;
+	width: 100%;
+	font-size: 1500%;
+	color: black;
+	text-transform: lowercase;
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	outline: none !important;
+	position: fixed;
+	margin: auto;
+	text-align: center;
+    font-family: Allan;
+    text-shadow: 0px 0px white;
+    letter-spacing: 0.1em;*/
+}
+
+
+
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Trigger -->
+<button class="btn" data-clipboard-text="Just because you can doesn't mean you should — clipboard.js">
+    Copy to clipboard
+</button>
+
+	
+	<div id="fullsize">
+		<div id="instruc"></div></div>
+	<div class="everything">
+		<textarea autofocus ></textarea>
+		<div class="contain"></div>
+		
+	</div>
+
+</body>
+
+
+<script type="text/javascript">
+
+//variable for text in the textarea
+$(document).ready(function(){
+	console.log(location.hash);
+
+	var updateGifs = function() {
+
+	$( 'body' ).click(function() {
+	  $( 'textarea' ).focus();
+	});
+	
+//update variable textareatext to what is in the textarea after every keydown
+
+	textareatext = $('textarea').val();
+
+//then when that variable changes set the contents of .contain to a sequence of divs that match text
+		//loop through all letters in textareatext
+			//make a var that is the number of letters in textareatext
+
+	var charCount = textareatext.length;
+	var replace = 700;
+
+	if (charCount==0){
+		$('#instruc').show();
+	}else{
+		$('#instruc').hide();
+	}
+	$('.contain').html("");
+	for (var j = 0; j <= replace; j++) {
+		
+		// if (charCount !== 0) {
+			for (var i = 0; i <= charCount -1; i++) {
+				//variable that is the current letter 
+				var currentChar = textareatext.charAt(i);
+					if (currentChar == " "){
+
+
+					} else {
+				$('.contain').append('<div class="myDiv" id=' +currentChar + ' style="background-image:url(' + currentChar + '.gif);"></div>');}
+			};
+	};
+ 	}
+
+	var textareatext = location.hash;
+	textareatext = textareatext.substring(1);
+	$('textarea').val(textareatext);  
+
+		//use horizontal scrolling to replace height of myDiv
+		 $(window).scroll(function() {
+		        var $myDiv = $('.myDiv');
+		        var st = $(this).scrollLeft();
+		        if ( st <= 50 ){
+		      		st=50;
+		      	}
+		        $myDiv.height( st );
+		      	
+		    }).scroll();
+
+		//when keydown happens in textarea, get current key
+ $("textarea").keydown(function(){
+ updateGifs();
+
+  });
+	
+ updateGifs();
+});
+
+</script>
+
+</html>
